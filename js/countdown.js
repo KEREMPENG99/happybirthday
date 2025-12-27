@@ -6,7 +6,7 @@
 // ================================
 
 // const targetDateTime = "12/30/2025 23:59:59"; // UBAH INI SESUAI TARGET ANDA
-const targetDateTime = "12/26/2025 19:31:00"; // UBAH INI SESUAI TARGET ANDA
+const targetDateTime = "12/30/2025 23:59:59"; // UBAH INI SESUAI TARGET ANDA
 let countdownInterval;
 let currentPhotoIndex = 0;
 
@@ -224,4 +224,5 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Tambahkan konfeti untuk testing (bisa dihapus)
     createConfetti(); // Uncomment untuk testing efek konfeti
+
 });
