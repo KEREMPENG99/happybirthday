@@ -10,7 +10,8 @@
 }
 
 .love-riddle-game {
-    background: #FFFFFF !important; /* Background PUTIH bersih */
+    /*background: #FFFFFF !important;  Background PUTIH bersih */
+    opacity: 0.5;
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
@@ -19,7 +20,7 @@
     border: 3px solid #e84393; /* Border pink solid */
     box-shadow: 0 10px 30px rgba(232, 67, 147, 0.15);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333333; /* Warna teks gelap untuk kontras tinggi */
+    color: #151515; /* Warna teks gelap untuk kontras tinggi */
     line-height: 1.6;
 }
 
