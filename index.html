@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy BIRTHDAY and ANNIVERSARY</title>
+    <title>Happy BIRTHDAY and ANNIVERSARY SAYANG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/happy-birthday.ico">
     <canvas id="snow-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1;"></canvas>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/riddle.css">
@@ -24,7 +25,7 @@
         </div>
     <div class="container">
         <header>
-            <h1 onclick="playMusic()">Happy Birthday and Anniversary Sayang❤️♫ </h1>
+            <h1>Happy Birthday and Anniversary Sayang❤️ </h1>
             <!-- Dekorasi hati -->
             <div class="heart-decoration" style="top: 20px; left: 30px;">❤️</div>
             <div class="heart-decoration" style="top: 40px; right: 50px;">❤️</div>
@@ -93,7 +94,7 @@
                 
                 <div class="popup-message">
                     <p>"Setiap hari yang ku lalui bersamamu adalah hari yang tidak pernah ingin ku akhiri."</p>
-                    <button class="btn popup-btn" onclick="closePhotoPopup()">Terima Kasih Sudah Menunggu 💝</button>
+                    <button class="btn popup-btn" onclick="closePhotoPopup()">Terima Kasih Sudah Menunggu ku 💝</button>
                 </div>
             </div>
         </div>
@@ -105,8 +106,8 @@
                     <i class="fas fa-images"></i>
                 </div>
                 <h2 class="game-title">Album Kenangan</h2>
-                <p class="game-description">Jelajahi koleksi gambar spesial yang penuh dengan kenangan indah bersama.</p>
-                <button class="btn" onclick="WAITopenGame('album')">Buka Album</button>
+                <p class="game-description">Lihat betapa cantik-nya dirimu Sayang❤️.</p>
+                <button class="btn" onclick="openGame('album')">Buka Album</button>
             </div>
 
             <!-- Teka-Teki Cinta -->
@@ -115,8 +116,8 @@
                     <i class="fas fa-heart"></i>
                 </div>
             <h2 class="game-title">Teka-Teki Cinta</h2>
-            <p class="game-description">Uji pengetahuan cintamu dengan menjawab teka-teki romantis ini!</p>
-            <button class="btn" onclick="WAITopenGame('riddle')">Main Teka-Teki</button>
+            <p class="game-description">Jawab teka-teki romantis ini untuk menguji kecintaanmu Sayang❤️.</p>
+            <button class="btn" onclick="openGame('riddle')">Main Teka-Teki</button>
             </div>
 
             <!-- Pesan Rahasia -->
@@ -125,8 +126,8 @@
                     <i class="fas fa-envelope"></i>
                 </div>
                 <h2 class="game-title">Pesan Rahasia</h2>
-                <p class="game-description">Temukan pesan rahasia yang tersembunyi hanya untukmu.</p>
-                <button class="btn" onclick="WAITopenGame('message')">Buka Pesan</button>
+                <p class="game-description">Dapatkan pesan rahasia yang hanya untukmu Sayang❤️.</p>
+                <button class="btn" onclick="openGame('message')">Buka Pesan</button>
             </div>
         </div>
 
@@ -136,7 +137,7 @@
                 <h2>Album Kenangan Spesial</h2>
                 <button class="back-btn" onclick="closeGame('album')"><i class="fas fa-arrow-left"></i> Kembali</button>
             </div>
-            <p style="text-align: center; margin-bottom: 20px; color: #666;">Klik pada gambar untuk melihat lebih dekat</p>
+            <p style="text-align: center; margin-bottom: 20px; color: #ffffff;">Klik gambarnya untuk baca Pesan Rahasia</p>
             
             <div class="album-container">
                 <!-- Gambar-gambar akan ditampilkan di sini -->
@@ -179,7 +180,7 @@
                 </div>
             </div>
             
-            <p style="text-align: center; margin-top: 30px; font-style: italic; color: #888;">
+            <p style="text-align: center; margin-top: 30px; font-style: italic; color: #ffffff;">
                 "Setiap gambar mewakili bagian dari perasaan yang tak bisa diungkapkan dengan kata-kata."
             </p>
         </div>
@@ -196,7 +197,7 @@
     <div class="love-riddle-game" role="region" aria-labelledby="riddleGameTitle">
         <h3 class="riddle-title">Coba Jawab Teka-Teki Cinta Ini!</h3>
         <p class="riddle-instruction" id="gameInstructions">
-            Pilih jawaban yang paling tepat untuk setiap pertanyaan tentang cinta dan hubungan. 
+            Pilih jawaban yang paling tepat untuk setiap pertanyaan tentang cinta dan hubungan ya sayang. 
         </p>
         
         <div class="riddles-container" id="riddlesContainer" role="list" aria-describedby="gameInstructions">
@@ -222,7 +223,7 @@
                     <h3>🎉 Selamat! 🎉</h3>
                     <p>Kamu berhasil menyelesaikan semua teka-teki cinta dengan sempurna!</p>
                     <div class="completion-hearts">💖💖💖💖💖</div>
-                    <p>"Cintamu seperti jawaban teka-teki ini - sempurna dan tak terbantahkan!"</p>
+                    <p>"Cintamu seperti jawaban teka-teki ini - sempurna dan tak terbantahkan sayangku!"</p>
                     <div class="hearts-container">
                         <div class="heart-badge">💝</div>
                         <div class="heart-badge">💘</div>
@@ -243,7 +244,7 @@
                 <h2>Pesan Rahasia</h2>
                 <button class="back-btn" onclick="closeGame('message')"><i class="fas fa-arrow-left"></i> Kembali</button>
             </div>
-            <p style="text-align: center; margin-bottom: 20px; color: #666;">Klik tombol di bawah untuk mengungkap pesan rahasia yang hanya untukmu.</p>
+            <p style="text-align: center; margin-bottom: 20px; color: #fff9f9;">Klik tombol di bawah untuk mengungkap pesan rahasia yang hanya untukmu.</p>
             
             <div class="message-container">
                 <div class="secret-message" id="secret-message">
@@ -253,13 +254,29 @@
             </div>
             
             <div style="text-align: center; margin-top: 30px;">
-                <p style="color: #888; font-style: italic;">"Kadang kata-kata tak cukup untuk mengungkapkan apa yang ada di hati, tapi setidaknya ini bisa menjadi awalnya."</p>
+                <p style="color: #ffffff; font-style: italic;">"Kadang kata-kata tak cukup untuk mengungkapkan apa yang ada di hati, tapi setidaknya ini bisa menjadi awalnya ya sayang."</p>
             </div>
         </div>
         <footer>
             <p>AKU PUNYA HADIAH SPESIAL BUAT KAMU
-                <span class="arrow-right">→</span> 🎁 <span class="arrow-left">←</span> untuk orang yang sangat spesial</p>
-            <p>Setiap detik bersamamu adalah anugerah terindah dalam hidupku</p>
+                <span class="arrow-right">→</span> 🎁 <span class="arrow-left">←</span> UNTUK ORANG YANG SANGAT SPECIAL</p>
+            <p style="color: #ffffff; font-style: italic;">"SETIAP DETIK BERSAMA MU, ADALAH ANUGRAH TERINDAH UNTUK-KU"</p>
+            <br>
+            <p style="
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 20px;
+                text-align: center;
+                opacity: 0.5;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                max-width: 400px;
+                margin: 20px auto;
+                line-height: 1.6;
+            ">
+                💌 <b style='color: #ffdd59'>NOVI MUTIARA</b> ❤️<br>
+                =<b style='color: #ffdd59'>SUGIANTO</b>=
+            </p>
         </footer>
     </div>
     <script src="js/textt.js"></script>
@@ -267,6 +284,4 @@
     <script src="js/javascript.js"></script>
     <script src="js/riddle.js"></script>
 </body>
-
 </html>
-
