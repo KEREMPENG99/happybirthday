@@ -100,14 +100,14 @@ header p {
 }
 
 .game-description {
-  color: #666;
+  color: #ff7eb3;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .btn {
   background: linear-gradient(90deg, #ff7eb3, #ff758c);
-  color: white;
+  color:#ff7eb3;
   border: none;
   padding: 12px 25px;
   border-radius: 50px;
@@ -124,7 +124,7 @@ header p {
 }
 
 .game-area {
-  background: white;
+  background: #ff7eb3;
   border-radius: 20px;
   padding: 30px;
   margin-bottom: 40px;
@@ -211,40 +211,6 @@ header p {
   font-size: 0.9rem;
 }
 
-.puzzle-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  max-width: 500px;
-  margin: 0 auto 30px;
-}
-
-.puzzle-piece {
-  width: 100%;
-  height: 150px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  cursor: move;
-  transition: transform 0.2s;
-}
-
-.puzzle-piece:hover {
-  transform: scale(1.03);
-}
-
-.puzzle-slot {
-  width: 100%;
-  height: 150px;
-  border: 2px dashed #ff7eb3;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #aaa;
-  font-size: 2rem;
-}
-
 .message-container {
   background: linear-gradient(135deg, #fff9f9, #fff0f3);
   border-radius: 20px;
@@ -293,7 +259,7 @@ header p {
 footer {
   text-align: center;
   padding: 30px 0;
-  color: #666;
+  color:#ff7eb3;
   font-size: 0.9rem;
   border-top: 1px solid #eee;
   margin-top: 30px;
@@ -301,7 +267,7 @@ footer {
 
 .kado {
   color: #ff758c;
-  font-size: 1.5rem;
+  font-size: 3rem;
   letter-spacing: 5px;
 }
 
