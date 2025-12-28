@@ -126,6 +126,7 @@ header p {
 
 .game-icon {
   font-size: 3rem;
+   opacity: 0.5;
   margin-bottom: 20px;
 }
 
@@ -143,7 +144,7 @@ header p {
 
 .btn {
   background: linear-gradient(90deg, #ff7eb3, #ff758c);
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 12px 25px;
   border-radius: 50px;
@@ -160,7 +161,7 @@ header p {
 }
 
 .game-area {
-    background: white;
+    opacity: 0.5;
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 40px;
@@ -196,7 +197,7 @@ header p {
 
 .back-btn {
   background: #f1f1f1;
-  color: #555;
+  color: #ff7eb3;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
@@ -218,7 +219,7 @@ header p {
 }
 
 .photo-frame {
-  background: #000000;
+  background: #ffffff;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -254,7 +255,7 @@ header p {
 }
 
 .message-container {
-  background: linear-gradient(135deg, #fff9f9, #fff0f3);
+  background: linear-gradient(135deg, #ffffff, #fff0f3);
   border-radius: 20px;
   padding: 30px;
   text-align: center;
@@ -281,8 +282,8 @@ header p {
 }
 
 .reveal-btn {
-  background: linear-gradient(90deg, #7effb3, #75ff8c);
-  color: white;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  color: rgb(255, 255, 255);
   border: none;
   padding: 15px 30px;
   border-radius: 50px;
@@ -290,18 +291,18 @@ header p {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 5px 15px rgba(126, 255, 179, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 126, 227, 0.3);
 }
 
 .reveal-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(126, 255, 179, 0.4);
+  box-shadow: 0 8px 20px rgba(246, 126, 255, 0.4);
 }
 
 footer {
   text-align: center;
   padding: 30px 0;
-  color: #666;
+  color: #ff0000;
   font-size: 0.9rem;
   border-top: 1px solid #eee;
   margin-top: 30px;
@@ -339,8 +340,8 @@ html {
 }
 
 body {
-  background-color: #222;
-  color: #E5CE81;
+  background-color: #fbfbfb;
+  color: #ff56b0;
   font-family: "Lato", sans-serif;
   overflow: hidden;
 }
@@ -397,7 +398,7 @@ body {
 .left,
 .back,
 .right {
-  background-color: #E5CE81;
+  background-color: #f2e6c0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   height: 100%;
   left: 0;
@@ -428,7 +429,7 @@ body {
 .lid-left:after,
 .lid-back:after,
 .lid-right:after {
-  background-color: #000000;
+  background-color: #f2e6c0;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   content: "";
   height: 100%;
@@ -501,7 +502,7 @@ body {
 .lid-back,
 .lid-right,
 .lid-front {
-  background-color: #000000;
+  background-color: #f2e6c0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   left: -5px;
   opacity: 1;
@@ -623,7 +624,7 @@ canvas {
 
 /* Countdown Timer Styles */
 .countdown-section {
-    background: rgb(255, 255, 255);
+    opacity: 0.5;
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 30px;
@@ -647,8 +648,8 @@ canvas {
 }
 
 .countdown-box {
-    background: linear-gradient(135deg, #ff7eb3, #ff758c);
-    color: white;
+    background: linear-gradient(135deg, #1b1616, #000000);
+    color: #ff7eb3;
     padding: 20px 15px;
     border-radius: 15px;
     min-width: 100px;
@@ -669,7 +670,7 @@ canvas {
 }
 
 .countdown-message {
-    color: #666;
+    color: #fffafa;
     font-style: italic;
     margin-top: 15px;
     font-size: 1.1rem;
@@ -740,7 +741,7 @@ canvas {
 
 .popup-subtitle {
     text-align: center;
-    color: #ff758c;
+    color: #f2f2f2;
     margin-bottom: 30px;
     font-size: 1.2rem;
 }
