@@ -34,16 +34,12 @@ window.addEventListener('resize', function() {
     }
 });
 
- let musicStarted = false;
-        function playMusic() {
-            if(!musicStarted) {
-                const audio = new Audio('song/hbd.mp3');
-                audio.loop = true;
-                audio.volume = 0.3;
-                audio.play();
-                musicStarted = true;
-            }
-        }
+ // Unmute after page loads (works in some browsers)
+  window.onload = function() {
+        const audio = new Audio('song/hbd.mp3');
+        audio.loop = true;
+        audio.play();
+    };
 
 // Fungsi untuk menutup game
 function closeGame(gameName) {
