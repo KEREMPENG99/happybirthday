@@ -210,7 +210,7 @@ function selectAnswer(riddleIndex, optionIndex) {
             selectedOption.classList.add('correct');
             feedback.className = 'riddle-feedback feedback-correct';
             feedback.innerHTML = `
-                <div><strong>✅ Jawaban Benar!</strong> Kamu memilih pilihan yang tepat!</div>
+                <div><strong>✅ YAY 🎉Jawaban mu benar sayang!</strong> Kamu memilih pilihan yang tepat sayangku!</div>
                 <div class="riddle-explanation"><strong>Penjelasan:</strong> ${riddle.explanation}</div>
             `;
             currentScore += 15;
@@ -222,8 +222,8 @@ function selectAnswer(riddleIndex, optionIndex) {
             selectedOption.classList.add('wrong');
             feedback.className = 'riddle-feedback feedback-wrong';
             feedback.innerHTML = `
-                <div><strong>❌ Jawaban Kurang Tepat</strong> Pilihanmu belum sepenuhnya benar.</div>
-                <div class="riddle-explanation"><strong>Penjelasan yang benar:</strong> ${riddle.explanation}</div>
+                <div><strong>❌ Yah.. 🥺Jawaban mu salah sayang!</strong> Coba soal yang lain sayang 🤪.</div>
+                <div class="riddle-explanation"><strong>Penjelasan yang benar itu sayang :</strong> ${riddle.explanation}</div>
             `;
             
             // Tampilkan jawaban yang benar
@@ -258,9 +258,9 @@ function selectAnswer(riddleIndex, optionIndex) {
                 completionMessage.setAttribute('aria-live', 'assertive');
                 completionMessage.innerHTML = `
                     <h3>🎉 Selamat! 🎉</h3>
-                    <p>Kamu berhasil menyelesaikan semua ${loveRiddles.length} teka-teki cinta dengan skor sempurna!</p>
+                    <p>Kamu berhasil menyelesaikan semua ${loveRiddles.length} teka-teki cinta dengan skor sempurna sayang♡!</p>
                     <div class="completion-hearts">💖💖💖💖💖</div>
-                    <p>"Pemahamanmu tentang cinta sangat luar biasa! Kamu layak mendapatkan semua cinta ku!."</p>
+                    <p>"Pemahamanmu tentang cinta sangat luar biasa! Kamu layak mendapatkan semua cinta ku sayang♡!."</p>
                     <div class="hearts-container">
                         <div class="heart-badge" aria-label="Heart trophy">💝</div>
                         <div class="heart-badge" aria-label="Heart trophy">💘</div>
@@ -316,7 +316,7 @@ function resetRiddles() {
     const announcement = document.createElement('div');
     announcement.className = 'sr-only';
     announcement.setAttribute('aria-live', 'assertive');
-    announcement.textContent = 'Game teka-teki cinta telah direset. Silakan mulai dari awal.';
+    announcement.textContent = 'Game teka-teki cinta telah direset. Selamat mencoba kembali sayang♡.';
     document.body.appendChild(announcement);
     
     setTimeout(() => {
@@ -344,7 +344,7 @@ function checkAllAnswers() {
             if (feedback) {
                 feedback.className = 'riddle-feedback feedback-wrong';
                 feedback.innerHTML = `
-                    <div><strong>⚠️ Pertanyaan Belum Dijawab</strong></div>
+                    <div><strong>⚠️ Pertanyaan Belum Dijawab sayang♡</strong></div>
                     <div class="riddle-explanation"><strong>Jawaban yang benar:</strong> ${riddle.options[riddle.correct]}</div>
                     <div class="riddle-explanation"><strong>Penjelasan:</strong> ${riddle.explanation}</div>
                 `;
@@ -377,7 +377,7 @@ function checkAllAnswers() {
         const announcement = document.createElement('div');
         announcement.className = 'sr-only';
         announcement.setAttribute('aria-live', 'assertive');
-        announcement.textContent = 'Selamat! Semua pertanyaan sudah terjawab.';
+        announcement.textContent = 'Selamat! Semua pertanyaan sudah terjawab sayang♡.';
         document.body.appendChild(announcement);
         
         setTimeout(() => {
