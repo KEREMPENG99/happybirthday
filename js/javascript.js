@@ -34,12 +34,24 @@ window.addEventListener('resize', function() {
     }
 });
 
- // Unmute after page loads (works in some browsers)
-  window.onload = function() {
-        const audio = new Audio('song/hbd.mp3');
-        audio.loop = true;
-        audio.play();
-    };
+function startMusic() {
+    const audio = new Audio('song/hbd.mp3');
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.play();
+    document.body.onclick = null; // Remove click handler
+    
+    // Save permission
+    localStorage.setItem('musicAutoplay', 'true');
+}
+
+// Try auto-play if previously allowed
+if(localStorage.getItem('musicAutoplay') === 'true') {
+    const audio = new Audio('song/hbd.mp3');
+    audio.loop = true;
+    audio.volume = 0.3;
+    audio.play();
+}
 
 // Fungsi untuk menutup game
 function closeGame(gameName) {
@@ -172,6 +184,7 @@ function initBackgroundSlideshow() {
 document.addEventListener('DOMContentLoaded', function() {
     initBackgroundSlideshow();
 });
+
 
 
 
