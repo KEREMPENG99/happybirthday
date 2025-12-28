@@ -34,6 +34,17 @@ window.addEventListener('resize', function() {
     }
 });
 
+ let musicStarted = false;
+        function playMusic() {
+            if(!musicStarted) {
+                const audio = new Audio('your-music.mp3');
+                audio.loop = true;
+                audio.volume = 0.3;
+                audio.play();
+                musicStarted = true;
+            }
+        }
+
 // Fungsi untuk menutup game
 function closeGame(gameName) {
 document.getElementById(gameName + '-game').classList.remove('active');
@@ -165,4 +176,5 @@ function initBackgroundSlideshow() {
 document.addEventListener('DOMContentLoaded', function() {
     initBackgroundSlideshow();
 });
+
 
