@@ -65,27 +65,27 @@ function updateCountdownMessage(distance, days) {
     if (days === 0) {
         const hours = Math.floor(distance / (1000 * 60 * 60));
         if (hours < 1) {
-            messageElement.textContent = "Hanya beberapa menit lagi! Bersiaplah untuk kejutan spesial!";
+            messageElement.textContent = "Hanya beberapa menit lagi sayang! Bersiaplah untuk kejutan spesial dari-ku!";
             messageElement.style.color = "#ff4757";
         } else if (hours < 6) {
-            messageElement.textContent = "Hanya beberapa jam lagi! Aku tidak sabar menunggumu!";
+            messageElement.textContent = "Hanya beberapa jam lagi sayang! Aku tidak sabar menunggumu!";
             messageElement.style.color = "#ff6b81";
         } else {
-            messageElement.textContent = "Hari yang ditunggu-tunggu akhirnya tiba!";
+            messageElement.textContent = "Hari yang ditunggu-tunggu akhirnya tiba sayangku!";
             messageElement.style.color = "#ff7eb3";
         }
     } else if (days === 1) {
-        messageElement.textContent = "Besok adalah hari yang spesial! Aku sangat bahagia!";
+        messageElement.textContent = "Besok adalah hari yang spesial kita sayang! Aku sangat bahagia!";
         messageElement.style.color = "#ff7eb3";
     } else if (days < 7) {
-        messageElement.textContent = `Hanya ${days} hari lagi! Persiapan sudah hampir selesai!`;
+        messageElement.textContent = `Hanya ${days} hari lagi sayang! Persiapan sudah hampir selesai sayang!`;
         messageElement.style.color = "#ff7eb3";
     } else if (days < 30) {
         messageElement.textContent = `Masih ada ${days} hari menuju momen spesial kita. Sabar ya sayang!`;
         messageElement.style.color = "#ff7eb3";
     } else {
-        messageElement.textContent = "Menuju momen yang sangat spesial bersamamu...";
-        messageElement.style.color = "#666";
+        messageElement.textContent = "Menuju momen yang sangat spesial bersamamu sayangku...";
+        messageElement.style.color = "#000000ff";
     }
 }
 
@@ -98,7 +98,7 @@ function showCountdownComplete() {
     document.getElementById('seconds').textContent = "00";
     
     document.getElementById('countdown-message').textContent = 
-        "🎉 WAKTUNYA TELAH TIBA! Ini momen spesial kita! 🎉";
+        "🎉 WAKTUNYA TELAH TIBA! Ini momen spesial kita sayang! 🎉";
     document.getElementById('countdown-message').style.color = "#ff4757";
     document.getElementById('countdown-message').style.fontWeight = "bold";
     
@@ -224,5 +224,5 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Tambahkan konfeti untuk testing (bisa dihapus)
     createConfetti(); // Uncomment untuk testing efek konfeti
-
 });
+
