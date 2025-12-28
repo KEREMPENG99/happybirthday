@@ -37,7 +37,7 @@ window.addEventListener('resize', function() {
  let musicStarted = false;
         function playMusic() {
             if(!musicStarted) {
-                const audio = new Audio('your-music.mp3');
+                const audio = new Audio('song/hbd.mp3');
                 audio.loop = true;
                 audio.volume = 0.3;
                 audio.play();
@@ -176,5 +176,6 @@ function initBackgroundSlideshow() {
 document.addEventListener('DOMContentLoaded', function() {
     initBackgroundSlideshow();
 });
+
 
 
