@@ -34,25 +34,6 @@ window.addEventListener('resize', function() {
     }
 });
 
-function startMusic() {
-    const audio = new Audio('song/hbd.mp3');
-    audio.loop = true;
-    audio.volume = 0.5;
-    audio.play();
-    document.body.onclick = null; // Remove click handler
-    
-    // Save permission
-    localStorage.setItem('musicAutoplay', 'true');
-}
-
-// Try auto-play if previously allowed
-if(localStorage.getItem('musicAutoplay') === 'true') {
-    const audio = new Audio('song/hbd.mp3');
-    audio.loop = true;
-    audio.volume = 0.3;
-    audio.play();
-}
-
 // Fungsi untuk menutup game
 function closeGame(gameName) {
 document.getElementById(gameName + '-game').classList.remove('active');
@@ -66,7 +47,11 @@ const photoTitles = {
     'photo3': 'Bintangku - Kamu selalu bersinar dalam hidupku',
     'photo4': 'Melodi Hati - Hidupku lebih indah denganmu',
     'photo5': 'Sumber Kebahagiaan - Senyummu adalah segalanya',
-    'photo6': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir'
+    'photo6': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
+    'photo7': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
+    'photo8': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
+    'photo9': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
+    'photo10': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
 };
 
 alert(photoTitles[photoId] );
@@ -184,7 +169,4 @@ function initBackgroundSlideshow() {
 document.addEventListener('DOMContentLoaded', function() {
     initBackgroundSlideshow();
 });
-
-
-
 
