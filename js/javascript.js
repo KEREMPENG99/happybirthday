@@ -59,17 +59,38 @@ alert(photoTitles[photoId] );
 
 // Fungsi untuk mengungkap pesan rahasia
 function revealMessage() {
-const messages = [
-    "Kamu itu penting banget buat aku, karena aku sayang kamu.",
-    "Hari aku selalu lebih seru kalau ada kamu.",
-    "Senyum kamu tuh kayak tombol auto-happy buat aku.",
-    "Aku bersyukur banget bisa dapet kamu, kayak dapet loot langka.",
-    "Sejak sama kamu, aku pengen jadi orang baik… walau kadang lupa 😜.",
-    "Perasaan aku ke kamu tuh kayak kuota, makin hari makin nambah.",
-    "Aku nggak minta banyak, cukup kamu bahagia (sama aku tentunya 😏).",
-    "Kamu itu doa aku yang dikabulin plus bonus.",
-    "Sama kamu rasanya kayak pulang, tapi nggak perlu buka pagar.",
-    "Intinya sih… aku sayang kamu, titik. ❤️"
+const messages = const messages = [
+  "Kita emang jauh, tapi lucunya masih nyampe kok 😆 sayang",
+  "Aku lagi kerja, kamu lagi istirahat… tapi tetep kepikiran satu sama lain sayang",
+  "Kadang aku ketawa sendiri cuma gara-gara inget kamu sayang",
+  "Walau jauh, bercanda sama kamu tuh tetap paling enak sayang",
+  "Aku capek, tapi inget kamu langsung hilang sayang",
+  "LDR gini tuh lucu ya, ketemunya jarang tapi rindunya sering sayang",
+  "Kita jauh bukan karena nggak mau bareng, tapi lagi sama-sama usaha",
+  "Kadang cuma chat sebentar tapi efeknya lama sayang",
+  "Aku kerja sambil mikir, nanti kalau ketemu ngapain ya sayang",
+  "Kamu tuh bikin capekku nggak kerasa sayang",
+
+  "Walau nggak ketemu, rasanya kamu tetep deket sayang",
+  "Aku suka cara kita ketawa walau cuma lewat layar sayang",
+  "Kadang aku senyum sendiri baca chat kamu yang dulu sayang",
+  "Jarak emang ada, tapi rasa mah nggak kemana-mana sayang",
+  "Kita emang jauh, tapi hatinya nggak ikut jauh sayang",
+  "Aku nunggu bukan karena terpaksa, tapi karena mau sayang",
+  "Kalau lagi capek, inget aja kita lagi berjuang bareng sayang",
+  "Nanti pas ketemu, ketawanya harus lebih lama ya sayang",
+  "Sekarang jauh dulu, nanti deketnya lama sayang",
+
+  "Aku kangen, tapi masih bisa ketawa karena kamu sayang",
+  "Kadang aku mikir, lucu juga ya kita bisa sejauh ini sayang",
+  "Kamu tuh sederhana, tapi bikin aku betah sayang",
+  "Walau jauh, kamu tetep orang favoritku sayang",
+  "Aku kerja sambil senyum-senyum sendiri mikirin kamu sayang",
+  "Kalau kamu capek, aku di sini walau cuma lewat chat sayang",
+  "Kita nggak ribet, cuma saling jaga aja sayang",
+  "Aku nyaman sama kamu, itu aja udah cukup sayang",
+  "Nggak perlu sering ketemu, asal hati tetap nyambung sayang",
+  "Pelan-pelan aja, yang penting bareng ya sayang"
 ];
 
 const randomMessage = messages[Math.floor(Math.random() * messages.length)];
@@ -169,4 +190,5 @@ function initBackgroundSlideshow() {
 document.addEventListener('DOMContentLoaded', function() {
     initBackgroundSlideshow();
 });
+
 
