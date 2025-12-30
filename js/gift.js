@@ -30,7 +30,7 @@
                 <div class="message-text" style="color: ${message.color}">
                     ${message.text}
                 </div>
-                <p>Semoga bermanfaat ya sayangku</p><br><p>7 lagi Bulan kita bertemu sayangku 🤗</p>
+                <p>Semoga bermanfaat ya sayangku</p><br><p>7 Bulan lagi kita bertemu sayangku 🤗</p>
             `;
             
             // Insert content
@@ -75,3 +75,4 @@
                 closePopup();
             }
         });
+
