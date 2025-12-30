@@ -15,9 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 </head>
 <body>
-    <audio autoplay loop style="display:none">
-        <source src="song/hbd.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bgMusic" controls style="display:none">
+    <source src="song/hbd.mp3">
+</audio>
         <div id="background-slideshow">
             <!-- Gambar-gambar background -->
             <div class="slide active" style="background-image: url('images/bd.png');"></div>
@@ -328,7 +328,13 @@
             </p>
         </footer>
     </div>
-    <script>new Audio('song/hbd.mp3').loop=true; new Audio('song/hbd.mp3').play()</script>
+    <script>
+    // User MUST click once, then music plays forever
+    document.body.onclick = function() {
+        document.getElementById('bgMusic').play();
+        document.body.onclick = null; // Remove after first click
+    }
+</script>
     <script src="js/textt.js"></script>
     <script src="js/gift.js"></script>
     <script src="js/countdown.js"></script>
@@ -336,6 +342,7 @@
     <script src="js/riddle.js"></script>
 </body>
 </html>
+
 
 
 
