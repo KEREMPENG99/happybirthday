@@ -70,7 +70,6 @@ const messages = [
   "Kadang cuma chat sebentar tapi efeknya lama sayang",
   "Aku kerja sambil mikir, nanti kalau ketemu ngapain ya sayang",
   "Kamu tuh bikin capekku nggak kerasa sayang",
-
   "Walau nggak ketemu, rasanya kamu tetep deket sayang",
   "Aku suka cara kita ketawa walau cuma lewat layar sayang",
   "Kadang aku senyum sendiri baca chat kamu yang dulu sayang",
@@ -80,7 +79,6 @@ const messages = [
   "Kalau lagi capek, inget aja kita lagi berjuang bareng sayang",
   "Nanti pas ketemu, ketawanya harus lebih lama ya sayang",
   "Sekarang jauh dulu, nanti deketnya lama sayang",
-
   "Aku kangen, tapi masih bisa ketawa karena kamu sayang",
   "Kadang aku mikir, lucu juga ya kita bisa sejauh ini sayang",
   "Kamu tuh sederhana, tapi bikin aku betah sayang",
@@ -190,6 +188,7 @@ function initBackgroundSlideshow() {
 document.addEventListener('DOMContentLoaded', function() {
     initBackgroundSlideshow();
 });
+
 
 
 
