@@ -42,16 +42,16 @@ document.getElementById(gameName + '-game').classList.remove('active');
 // Fungsi untuk menampilkan foto
 function showPhoto(photoId) {
 const photoTitles = {
-    'photo1': 'Simbol Cinta - Kamu adalah cinta sejatiku',
-    'photo2': 'Cahaya Hidupku - Kamu menerangi hari-hariku',
-    'photo3': 'Bintangku - Kamu selalu bersinar dalam hidupku',
-    'photo4': 'Melodi Hati - Hidupku lebih indah denganmu',
-    'photo5': 'Sumber Kebahagiaan - Senyummu adalah segalanya',
-    'photo6': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
-    'photo7': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
-    'photo8': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
-    'photo9': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
-    'photo10': 'Tak Terhingga - Cintaku padamu tak akan pernah berakhir',
+  'photo1': 'Peace kecil, senyum manis — bikin hati ikut tenang 🤍',
+  'photo2': 'Naik kuda sambil senyum — cantiknya kebangetan 🐎✨',
+  'photo3': 'Senyumnya bersinar — bikin dunia ikut cerah ☀️',
+  'photo4': 'Peace manis — cantiknya bikin lupa kedip 💕',
+  'photo5': 'Agak blur, tapi tetap paling lucu 😎💫',
+  'photo6': 'Pose galak dikit — tapi tetap gemas kok 😤💗',
+  'photo7': 'Jempol mantap — senyumnya juga juara 👍😊',
+  'photo8': 'Duduk manis — cantiknya adem di hati 🤍',
+  'photo9': 'Muka nangis dikit — tapi tetap lucu dan manis 🥺💞',
+  'photo10': 'Pakai masker pun — cantiknya tetap kelihatan 😷✨'
 };
 
 alert(photoTitles[photoId] );
