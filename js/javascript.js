@@ -39,6 +39,20 @@ function closeGame(gameName) {
 document.getElementById(gameName + '-game').classList.remove('active');
 }
 
+ const audio = document.getElementById('bgMusic');
+    
+    // Make song loop when it ends
+    audio.addEventListener('ended', function() {
+        this.currentTime = 0; // Reset to beginning
+        this.play(); // Play again
+    });
+    
+    // Start on click
+    document.body.onclick = function() {
+        audio.play();
+        document.body.onclick = null; // Remove click listener
+    };
+
 // Fungsi untuk menampilkan foto
 function showPhoto(photoId) {
 const photoTitles = {
@@ -188,6 +202,7 @@ function initBackgroundSlideshow() {
 document.addEventListener('DOMContentLoaded', function() {
     initBackgroundSlideshow();
 });
+
 
 
 
