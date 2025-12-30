@@ -1,83 +1,77 @@
-// Gift.js - Versi sederhana tanpa canvas yang mengganggu scroll
-document.addEventListener('DOMContentLoaded', function() {
-    // Buat efek hujan hati di seluruh halaman
-    function createFallingHearts() {
-        const heartContainer = document.createElement('div');
-        heartContainer.id = 'heart-container';
-        heartContainer.style.position = 'fixed';
-        heartContainer.style.top = '0';
-        heartContainer.style.left = '0';
-        heartContainer.style.width = '100%';
-        heartContainer.style.height = '100%';
-        heartContainer.style.pointerEvents = 'none';
-        heartContainer.style.zIndex = '9999';
-        document.body.appendChild(heartContainer);
+// Array of messages with images
+        const messages = [
+            {
+                image: "images/kado.png",
+                text: "I Love You Sayang! 💖",
+                color: "#ff6b6b"
+            }
+        ];
         
-        // Buat 20 hati jatuh
-        for (let i = 0; i < 20; i++) {
-            setTimeout(() => {
-                createHeart(heartContainer);
-            }, i * 300);
+        let clickCount = "";
+        
+        // Get random message
+        function getRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            return messages[randomIndex];
         }
-    }
-    
-    function createHeart(container) {
-        const heart = document.createElement('div');
-        heart.innerHTML = '❤️';
-        heart.style.position = 'absolute';
-        heart.style.fontSize = Math.random() * 20 + 15 + 'px';
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.top = '-50px';
-        heart.style.opacity = '0.7';
-        heart.style.color = ['#ff758c', '#ff7eb3', '#ffb6c1', '#ff69b4'][Math.floor(Math.random() * 4)];
-        heart.style.zIndex = '9999';
-        heart.style.pointerEvents = 'none';
         
-        container.appendChild(heart);
-        
-        // Animasi jatuh
-        const duration = Math.random() * 3 + 2;
-        const endLeft = Math.random() * 100;
-        
-        heart.animate([
-            { 
-                transform: 'translate(0, 0) rotate(0deg)',
-                opacity: 0.8
-            },
-            { 
-                transform: `translate(${endLeft - parseFloat(heart.style.left)}vw, 100vh) rotate(${Math.random() * 360}deg)`,
-                opacity: 0
-            }
-        ], {
-            duration: duration * 1000,
-            easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
-        });
-        
-        // Hapus setelah animasi selesai
-        setTimeout(() => {
-            if (heart.parentNode) {
-                heart.parentNode.removeChild(heart);
-            }
-        }, duration * 1000);
-    }
-    
-    // Tambahkan event listener untuk tombol hadiah
-    const giftText = document.querySelector('footer p');
-    if (giftText && giftText.textContent.includes('🎁')) {
-        giftText.style.cursor = 'pointer';
-        giftText.addEventListener('click', function() {
-            createFallingHearts();
+        // Show message popup
+        function showRandomMessage() {
+            // Update click count
+            document.getElementById('clickCount').textContent = clickCount;
             
-            // Tampilkan pesan spesial
-            const messages = [
-                "Hadiah terindahku adalah kamu! 💝",
-                "Setiap momen bersamamu adalah hadiah terbaik! 🎀",
-                "Kamu adalah keajaiban terbesar dalam hidupku! ✨",
-                "Cintaku padamu adalah hadiah sejati! 💖"
-            ];
+            // Get random message
+            const message = getRandomMessage();
             
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            alert(randomMessage);
+            // Create popup content
+            const content = `
+                <h2>Surprise sayangku! 🎁</h2>
+                <img class="message-image" src="${message.image}" alt="Surprise Image">
+                <div class="message-text" style="color: ${message.color}">
+                    ${message.text}
+                </div>
+                <p>Semoga bermanfaat ya sayangku</p><br><p>7 lagi Bulan kita bertemu sayangku 🤗</p>
+            `;
+            
+            // Insert content
+            document.getElementById('messageContent').innerHTML = content;
+            
+            // Show popup and overlay
+            document.getElementById('messagePopup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+            
+            // Add celebration effect
+            celebrate();
+        }
+        
+        // Close popup
+        function closePopup() {
+            document.getElementById('messagePopup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+        
+        // Celebration effect (confetti)
+        function celebrate() {
+            // Simple celebration effect
+            const giftIcon = document.querySelector('.gift-icon');
+            giftIcon.style.transform = 'scale(1.3)';
+            giftIcon.style.color = getRandomColor();
+            
+            setTimeout(() => {
+                giftIcon.style.transform = 'scale(1)';
+                giftIcon.style.color = '#e91e63';
+            }, 300);
+        }
+        
+        // Generate random color
+        function getRandomColor() {
+            const colors = ['#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        // Close popup when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePopup();
+            }
         });
-    }
-});
