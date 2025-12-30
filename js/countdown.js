@@ -5,7 +5,6 @@
 // Contoh: "12/25/2024 20:00:00" (25 Desember 2024 jam 8 malam)
 // ================================
 
-// const targetDateTime = "12/30/2025 23:59:59"; // UBAH INI SESUAI TARGET ANDA
 const targetDateTime = "12/30/2025 23:59:59"; // UBAH INI SESUAI TARGET ANDA
 let countdownInterval;
 let currentPhotoIndex = 0;
@@ -225,4 +224,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Tambahkan konfeti untuk testing (bisa dihapus)
     createConfetti(); // Uncomment untuk testing efek konfeti
 });
-
