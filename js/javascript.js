@@ -59,7 +59,7 @@ alert(photoTitles[photoId] );
 
 // Fungsi untuk mengungkap pesan rahasia
 function revealMessage() {
-const messages = const messages = [
+const messages = [
   "Kita emang jauh, tapi lucunya masih nyampe kok 😆 sayang",
   "Aku lagi kerja, kamu lagi istirahat… tapi tetep kepikiran satu sama lain sayang",
   "Kadang aku ketawa sendiri cuma gara-gara inget kamu sayang",
@@ -190,5 +190,6 @@ function initBackgroundSlideshow() {
 document.addEventListener('DOMContentLoaded', function() {
     initBackgroundSlideshow();
 });
+
 
 
