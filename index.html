@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title >Happy BIRTHDAY and ANNIVERSARY SAYANG</title>
+    <title>Happy BIRTHDAY and ANNIVERSARY</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="images/happy-birthday.ico">
     <canvas id="snow-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1;"></canvas>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/riddle.css">
     <link rel="stylesheet" href="css/textt.css">
+    <link rel="stylesheet" href="css/gift.css">
     <!-- Ganti meta viewport di head -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 </head>
-<body onclick="startMusic()">
+<body>
         <div id="background-slideshow">
             <!-- Gambar-gambar background -->
-            <div class="slide active" style="background-image: url('images/bd.jpg');"></div>
-            <div class="slide" style="background-image: url('images/bd.jpg');"></div>
-            <div class="slide" style="background-image: url('images/bd.jpg');"></div>
+            <div class="slide active" style="background-image: url('images/bd.png');"></div>
+            <div class="slide" style="background-image: url('images/bd.png');"></div>
+            <div class="slide" style="background-image: url('images/bd.png');"></div>
             
             <!-- Overlay untuk keterbacaan -->
             <div class="overlay"></div>
@@ -68,15 +68,31 @@
                 <div class="photo-slider">
                     <!-- Foto-foto spesial akan ditampilkan di sini -->
                     <div class="photo-slide active">
-                        <img src="images/ph1.jpg" alt="Momen Spesial 1" >
+                        <img src="images/sp1.jpg" alt="Momen Spesial 1" >
                         <p class="photo-caption">Kenangan pertama yang tak terlupakan</p>
                     </div>
                     <div class="photo-slide">
-                        <img src="images/ph2.jpg" alt="Momen Spesial 2" >
+                        <img src="images/sp2.jpg" alt="Momen Spesial 2" >
                         <p class="photo-caption">Senyummu menerangi hariku</p>
                     </div>
                     <div class="photo-slide">
-                        <img src="images/ph3.jpg" alt="Momen Spesial 3" >
+                        <img src="images/sp3.jpg" alt="Momen Spesial 3" >
+                        <p class="photo-caption">Bersamamu adalah anugerah terindah</p>
+                    </div>
+                    <div class="photo-slide">
+                        <img src="images/sp4.jpg" alt="Momen Spesial 4" >
+                        <p class="photo-caption">Bersamamu adalah anugerah terindah</p>
+                    </div>
+                    <div class="photo-slide">
+                        <img src="images/sp5.jpg" alt="Momen Spesial 5" >
+                        <p class="photo-caption">Bersamamu adalah anugerah terindah</p>
+                    </div>
+                    <div class="photo-slide">
+                        <img src="images/sp6.jpg" alt="Momen Spesial 6" >
+                        <p class="photo-caption">Bersamamu adalah anugerah terindah</p>
+                    </div>
+                    <div class="photo-slide">
+                        <img src="images/sp7.jpg" alt="Momen Spesial 7" >
                         <p class="photo-caption">Bersamamu adalah anugerah terindah</p>
                     </div>
                     
@@ -89,6 +105,10 @@
                         <span class="dot active" onclick="goToSlide(0)"></span>
                         <span class="dot" onclick="goToSlide(1)"></span>
                         <span class="dot" onclick="goToSlide(2)"></span>
+                        <span class="dot" onclick="goToSlide(3)"></span>
+                        <span class="dot" onclick="goToSlide(4)"></span>
+                        <span class="dot" onclick="goToSlide(5)"></span>
+                        <span class="dot" onclick="goToSlide(6)"></span>
                     </div>
                 </div>
                 
@@ -107,7 +127,7 @@
                 </div>
                 <h2 class="game-title">Album Kenangan</h2>
                 <p class="game-description">Lihat betapa cantik-nya dirimu Sayang❤️.</p>
-                <button class="btn" onclick="WopenGame('album')">Buka Album</button>
+                <button class="btn" onclick="openGame('album')">Buka Album</button>
             </div>
 
             <!-- Teka-Teki Cinta -->
@@ -117,7 +137,7 @@
                 </div>
             <h2 class="game-title">Teka-Teki Cinta</h2>
             <p class="game-description">Jawab teka-teki romantis ini untuk menguji kecintaanmu Sayang❤️.</p>
-            <button class="btn" onclick="WopenGame('riddle')">Main Teka-Teki</button>
+            <button class="btn" onclick="openGame('riddle')">Main Teka-Teki</button>
             </div>
 
             <!-- Pesan Rahasia -->
@@ -127,7 +147,7 @@
                 </div>
                 <h2 class="game-title">Pesan Rahasia</h2>
                 <p class="game-description">Dapatkan pesan rahasia yang hanya untukmu Sayang❤️.</p>
-                <button class="btn" onclick="WopenGame('message')">Buka Pesan</button>
+                <button class="btn" onclick="openGame('message')">Buka Pesan</button>
             </div>
         </div>
 
@@ -152,30 +172,42 @@
                 </div>
                 
                 <div class="photo-frame" onclick="showPhoto('photo3')">
-                    <div style="background: linear-gradient(135deg, #d4fc79, #96e6a1); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #555; font-size: 1.2rem;">
-                        <i class="fas fa-star" style="font-size: 3rem; color: #ffd700;"></i>
-                    </div>
+                    <img src="images/3.jpg" alt="Cahaya Hidupku" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="photo-label">Bintangku</div>
                 </div>
                 
                 <div class="photo-frame" onclick="showPhoto('photo4')">
-                    <div style="background: linear-gradient(135deg, #fbc2eb, #a6c1ee); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #555; font-size: 1.2rem;">
-                        <i class="fas fa-music" style="font-size: 3rem; color: #a78bfa;"></i>
-                    </div>
+                    <img src="images/4.jpg" alt="Cahaya Hidupku" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="photo-label">Melodi Hati</div>
                 </div>
                 
                 <div class="photo-frame" onclick="showPhoto('photo5')">
-                    <div style="background: linear-gradient(135deg, #ff9a9e, #fad0c4); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #555; font-size: 1.2rem;">
-                        <i class="fas fa-smile" style="font-size: 3rem; color: #ff6b6b;"></i>
-                    </div>
+                    <img src="images/6.jpg" alt="Cahaya Hidupku" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="photo-label">Sumber Kebahagiaan</div>
                 </div>
                 
                 <div class="photo-frame" onclick="showPhoto('photo6')">
-                    <div style="background: linear-gradient(135deg, #a3bded, #6991c7); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #555; font-size: 1.2rem;">
-                        <i class="fas fa-infinity" style="font-size: 3rem; color: #4a6fa5;"></i>
-                    </div>
+                    <img src="images/7.jpg" alt="Cahaya Hidupku" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="photo-label">Tak Terhingga</div>
+                </div>
+
+                <div class="photo-frame" onclick="showPhoto('photo7')">
+                    <img src="images/8.jpg" alt="Cahaya Hidupku" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="photo-label">Tak Terhingga</div>
+                </div>
+
+                <div class="photo-frame" onclick="showPhoto('photo8')">
+                    <img src="images/9.jpg" alt="Cahaya Hidupku" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="photo-label">Tak Terhingga</div>
+                </div>
+
+                <div class="photo-frame" onclick="showPhoto('photo9')">
+                    <img src="images/9.jpg" alt="Cahaya Hidupku" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="photo-label">Tak Terhingga</div>
+                </div>
+
+                <div class="photo-frame" onclick="showPhoto('photo10')">
+                    <img src="images/9.jpg" alt="Cahaya Hidupku" style="width: 100%; height: 100%; object-fit: cover;">
                     <div class="photo-label">Tak Terhingga</div>
                 </div>
             </div>
@@ -258,8 +290,21 @@
             </div>
         </div>
         <footer>
-            <p>AKU PUNYA HADIAH SPESIAL BUAT KAMU
-                <span class="arrow-right">→</span> 🎁 <span class="arrow-left">←</span> UNTUK ORANG YANG SANGAT SPECIAL</p>
+            <p style="color: #ff0000; font-style: bold; font-size: large;">AKU PUNYA HADIAH SPESIAL BUAT KAMU </p>
+                    <!-- Gift Icon -->
+<p style="color: #ff0000; font-style: bold; font-size: large;">UNTUK ORANG YANG SANGAT SPECIAL</p> <div class="gift-icon click-counter" onclick="showRandomMessage()">
+        <i class="fas fa-gift"><span id="clickCount"></span></i>
+    </div> <br><p> </p>
+                <!-- Overlay (background dim) -->
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    
+    <!-- Message Popup -->
+    <div class="message-popup" id="messagePopup">
+        <div id="messageContent">
+            <!-- Content will be inserted here by JavaScript -->
+        </div>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
             <p style="color: #ffffff; font-style: italic;">"SETIAP DETIK BERSAMA MU, ADALAH ANUGRAH TERINDAH UNTUK-KU"</p>
             <br>
             <p style="
@@ -280,15 +325,9 @@
         </footer>
     </div>
     <script src="js/textt.js"></script>
+    <script src="js/gift.js"></script>
     <script src="js/countdown.js"></script>
     <script src="js/javascript.js"></script>
     <script src="js/riddle.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
