@@ -328,13 +328,20 @@
             </p>
         </footer>
     </div>
-    <script>
-    // User MUST click once, then music plays forever
+  <script>
+    const audio = document.getElementById('bgMusic');
+    
+    // Make song loop when it ends
+    audio.addEventListener('ended', function() {
+        this.currentTime = 0; // Reset to beginning
+        this.play(); // Play again
+    });
+    
+    // Start on click
     document.body.onclick = function() {
-        document.getElementById('bgMusic').play();
-        document.body.onclick = null; // Remove after first click
-    }
-</script>
+        audio.play();
+        document.body.onclick = null; // Remove click listener
+    };
     <script src="js/textt.js"></script>
     <script src="js/gift.js"></script>
     <script src="js/countdown.js"></script>
@@ -342,6 +349,7 @@
     <script src="js/riddle.js"></script>
 </body>
 </html>
+
 
 
 
