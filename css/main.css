@@ -4,10 +4,16 @@
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600; /* Semi-bold yang hangat */
+    font-size: 18px;
+    line-height: 1.1;
+}
 
 body {
     /* Hapus gradient dan ganti dengan gambar */
-    background-image: url('../images/bd.jpg'); /* Sesuaikan path */
+    background-image: url('../images/bd.png'); /* Sesuaikan path */
     background-size: cover; /* Gambar menutupi seluruh area */
     background-position: center; /* Posisi tengah */
     background-attachment: fixed; /* Tetap saat scroll */
