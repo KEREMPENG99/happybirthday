@@ -71,6 +71,9 @@ const photoTitles = {
 alert(photoTitles[photoId] );
 }
 
+let messageIndex = 0;
+let usedMessages = new Set(); // Untuk melacak pesan yang sudah ditampilkan
+
 // Fungsi untuk mengungkap pesan rahasia
 function revealMessage() {
 const messages = [
@@ -105,7 +108,76 @@ const messages = [
   "Pelan-pelan aja, yang penting bareng ya sayang"
 ];
 
-const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+const secretMessageDiv = document.getElementById('secret-message');
+    
+    // Jika semua pesan sudah ditampilkan, reset
+    if (usedMessages.size >= messages.length) {
+        usedMessages.clear(); // Reset untuk mulai dari awal
+        messageIndex = 0;
+    }
+ // Cari pesan yang belum ditampilkan
+    let randomMessage;
+    do {
+        randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    } while (usedMessages.has(randomMessage) && usedMessages.size < messages.length);
+    
+    // Tambahkan ke pesan yang sudah ditampilkan
+    usedMessages.add(randomMessage);
+    
+    // Tampilkan pesan dengan efek ketik
+    secretMessageDiv.innerHTML = '';
+    secretMessageDiv.classList.add('revealed');
+    
+    // Efek ketik per huruf
+    typeWriter(secretMessageDiv, `"${randomMessage}"`, 0);
+    
+    // Ubah tombol jika semua pesan sudah ditampilkan
+    const button = document.querySelector('.reveal-btn');
+    if (usedMessages.size >= messages.length) {
+        button.innerHTML = '<i class="fas fa-undo"></i> Mulai Ulang';
+        button.onclick = function() {
+            usedMessages.clear();
+            messageIndex = 0;
+            revealMessage();
+        };
+    } else {
+        const remaining = messages.length - usedMessages.size;
+        button.innerHTML = `<i class="fas fa-redo"></i> Pesan Lainnya (${remaining} tersisa)`;
+        button.onclick = revealMessage;
+    }
+}
+
+// Fungsi efek ketik
+function typeWriter(element, text, i) {
+    if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(function() {
+            typeWriter(element, text, i);
+        }, 50); // Kecepatan ketik (ms)
+    }
+}
+
+// Simpan pesan yang sudah ditampilkan di localStorage
+function saveToLocalStorage() {
+    localStorage.setItem('usedMessages', JSON.stringify(Array.from(usedMessages)));
+    localStorage.setItem('messageIndex', messageIndex.toString());
+}
+
+// Load dari localStorage saat halaman dimuat
+window.onload = function() {
+    const savedMessages = localStorage.getItem('usedMessages');
+    const savedIndex = localStorage.getItem('messageIndex');
+    
+    if (savedMessages) {
+        usedMessages = new Set(JSON.parse(savedMessages));
+        messageIndex = savedIndex ? parseInt(savedIndex) : 0;
+    }
+};
+
+// Tambahkan event untuk menyimpan saat halaman ditutup
+window.addEventListener('beforeunload', saveToLocalStorage);
+/*const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 const secretMessageDiv = document.getElementById('secret-message');
 
 secretMessageDiv.innerHTML = `"${randomMessage}"`;
@@ -117,7 +189,7 @@ button.innerHTML = '<i class="fas fa-redo"></i> Pesan Lainnya';
 button.onclick = function() {
     revealMessage();
 };
-}
+}*/
 
 // Inisialisasi halaman
 document.addEventListener('DOMContentLoaded', function() {
@@ -202,6 +274,7 @@ function initBackgroundSlideshow() {
 document.addEventListener('DOMContentLoaded', function() {
     initBackgroundSlideshow();
 });
+
 
 
 
