@@ -1,353 +1,306 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy BIRTHDAY and ANNIVERSARY</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <canvas id="snow-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1;"></canvas>
-    <link rel="icon" type="image/x-icon" href="images/happy-birthday.ico">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/riddle.css">
-    <link rel="stylesheet" href="css/textt.css">
-    <link rel="stylesheet" href="css/gift.css">
-    <!-- Ganti meta viewport di head -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💡 Site under maintenance</title>
+  <!-- Simple, clean, one‑page maintenance mode -->
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f8fafc 0%, #eef2f6 100%);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 1.5rem;
+      line-height: 1.5;
+      color: #1e293b;
+    }
+
+    /* main card – everything fits on one page */
+    .maintenance-card {
+      max-width: 720px;
+      width: 100%;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 48px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15), 0 4px 18px 0 rgba(0,0,0,0.05);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    /* icon / mark */
+    .gear-icon {
+      font-size: 5rem;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      filter: drop-shadow(0 6px 8px rgba(0,100,200,0.15));
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(130deg, #1e2b3a, #2c3e50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .status-badge {
+      display: inline-block;
+      background: #eab30820;
+      color: #9b6f0b;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      border: 1px solid #eab30840;
+      margin-bottom: 1.8rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .message {
+      font-size: 1.24rem;
+      color: #334155;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* progress bar container (visual only) */
+    .progress-container {
+      margin: 2rem 0 2.5rem 0;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #4b5563;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-track {
+      height: 12px;
+      background: #e2e8f0;
+      border-radius: 30px;
+      padding: 2px;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .progress-fill {
+      width: 73%; /* arbitrary — looks like we're getting there */
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #2563eb, #1d4ed8);
+      border-radius: 30px;
+      box-shadow: 0 2px 6px #3b82f670;
+      animation: softPulse 2.4s infinite alternate ease-in-out;
+    }
+
+    @keyframes softPulse {
+      0% { opacity: 0.85; }
+      100% { opacity: 1; box-shadow: 0 2px 10px #2563ebc0; }
+    }
+
+    /* estimated time */
+    .eta {
+      font-size: 1rem;
+      background: #ffffff70;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      display: inline-block;
+      border: 1px dashed #94a3b8;
+      color: #1e293b;
+      margin-bottom: 2.2rem;
+    }
+
+    .eta span {
+      font-weight: 700;
+      background: #1e293b;
+      color: white;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      margin-left: 0.4rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* small notif form – lightweight, keeps one-page clean */
+    .notify-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .notify-input {
+      flex: 1 1 240px;
+      padding: 0.9rem 1.5rem;
+      border: 1px solid #cbd5e1;
+      background: white;
+      border-radius: 60px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.15s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .notify-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 4px 14px rgba(37,99,235,0.15);
+    }
+
+    .notify-button {
+      background: #0f172a;
+      color: white;
+      border: none;
+      font-weight: 600;
+      padding: 0.9rem 2.2rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.15s;
+      border: 1px solid #1e293b;
+      box-shadow: 0 8px 18px -8px #0f172a80;
+    }
+
+    .notify-button:hover {
+      background: #1e293b;
+      transform: scale(1.02);
+      box-shadow: 0 10px 22px -6px #0f172a;
+    }
+
+    .notify-button:active {
+      transform: scale(0.98);
+    }
+
+    /* tiny footer – no extra fluff, stays inside card */
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-note a {
+      color: #1e293b;
+      text-decoration: none;
+      border-bottom: 1px dotted #94a3b8;
+    }
+
+    .footer-note a:hover {
+      border-bottom: 1px solid #2563eb;
+      color: #0f172a;
+    }
+
+    /* everything fits on one screen — no scroll for most laptops/phones */
+    @media (max-width: 500px) {
+      .maintenance-card {
+        padding: 2rem 1.5rem;
+        border-radius: 32px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .gear-icon {
+        font-size: 4rem;
+      }
+      .message {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* optional demo style for smoothness */
+    .credit-note {
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
 </head>
 <body>
-    <audio id="bgMusic" controls style="display:none">
-    <source src="song/hbd.mp3">
-</audio>
-        <div id="background-slideshow">
-            <!-- Gambar-gambar background -->
-            <div class="slide active" style="background-image: url('images/bd.png');"></div>
-            <div class="slide" style="background-image: url('images/bd.png');"></div>
-            <div class="slide" style="background-image: url('images/bd.png');"></div>
-            
-            <!-- Overlay untuk keterbacaan -->
-            <div class="overlay"></div>
-        </div>
-    <div class="container">
-        <header>
-            <h1>Happy Birthday and Anniversary Sayang❤️ </h1>
-            <!-- Dekorasi hati -->
-            <div class="heart-decoration" style="top: 20px; left: 30px;">❤️</div>
-            <div class="heart-decoration" style="top: 40px; right: 50px;">❤️</div>
-            <div class="heart-decoration" style="bottom: 30px; left: 100px;">❤️</div>
-            
-        </header>
+  <div class="maintenance-card">
+    <!-- gear/settings decorative emoji -->
+    <div class="gear-icon" role="img" aria-label="tools icon">⚙️ 🔧</div>
 
-            <div class="countdown-section">
-                <h2><i class="fas fa-clock"></i> Menuju Momen Spesial</h2>
-            <div class="countdown-container">
-                <div class="countdown-box">
-                    <span id="days">00</span>
-                    <small>Hari</small>
-                </div>
-                <div class="countdown-box">
-                    <span id="hours">00</span>
-                    <small>Jam</small>
-                </div>
-                <div class="countdown-box">
-                    <span id="minutes">00</span>
-                    <small>Menit</small>
-                </div>
-                <div class="countdown-box">
-                    <span id="seconds">00</span>
-                    <small>Detik</small>
-                </div>
-            </div>
-            <p class="countdown-message" id="countdown-message">
-                Menuju momen yang sangat spesial bersamamu...
-            </p>
-            </div>
+    <h1>Quick tune‑up</h1>
+    <div class="status-badge">⏳ scheduled maintenance</div>
 
-            <!-- Modal Popup Foto (tersembunyi sampai timer selesai) -->
-            <div id="photo-popup" class="photo-popup">
-            <div class="popup-content">
-                <button class="close-popup" onclick="closePhotoPopup()">×</button>
-                <h3>Waktunya Tiba! 💖</h3>
-                <p class="popup-subtitle">Ini adalah momen spesial untuk kita...</p>
-                
-                <div class="photo-slider">
-                    <!-- Foto-foto spesial akan ditampilkan di sini -->
-                    <div class="photo-slide active">
-                        <img src="images/sp1.jpg" alt="Momen Spesial 1" >
-                        <p class="photo-caption">Kecup kecil di pipi, tapi cintanya terasa besar sayang 💋🤍</p>
-                    </div>
-                    <div class="photo-slide">
-                        <img src="images/sp2.jpg" alt="Momen Spesial 2" >
-                        <p class="photo-caption">Pose sederhana, tapi bahagianya nyata ✌️😊</p>
-                    </div>
-                    <div class="photo-slide">
-                        <img src="images/sp3.jpg" alt="Momen Spesial 3" >
-                        <p class="photo-caption">Tanganku ke arahmu — karena kamu tujuan hatiku sayang 💞</p>
-                    </div>
-                    <div class="photo-slide">
-                        <img src="images/sp4.jpg" alt="Momen Spesial 4" >
-                        <p class="photo-caption">Meski agak kaku, rasanya tetap nyaman kalau sama kamu sayang🤍</p>
-                    </div>
-                    <div class="photo-slide">
-                        <img src="images/sp5.jpg" alt="Momen Spesial 5" >
-                        <p class="photo-caption">Senyum kita hari itu, semoga selalu seperti ini ya sayang 😊💕</p>
-                    </div>
-                    <div class="photo-slide">
-                        <img src="images/sp6.jpg" alt="Momen Spesial 6" >
-                        <p class="photo-caption">Berdua pakai jaket, hangatnya bukan cuma karena cuaca 🧥❤️</p>
-                    </div>
-                    <div class="photo-slide">
-                        <img src="images/sp7.jpg" alt="Momen Spesial 7" >
-                        <p class="photo-caption">Di bawah langit Samosir, aku bersyukur bersama mu sayang 🌊✨</p>
-                    </div>
-                    
-                    <!-- Navigasi slider -->
-                    <button class="slider-nav prev" onclick="changeSlide(-1)">❮</button>
-                    <button class="slider-nav next" onclick="changeSlide(1)">❯</button>
-                    
-                    <!-- Dots indicator -->
-                    <div class="slider-dots">
-                        <span class="dot active" onclick="goToSlide(0)"></span>
-                        <span class="dot" onclick="goToSlide(1)"></span>
-                        <span class="dot" onclick="goToSlide(2)"></span>
-                        <span class="dot" onclick="goToSlide(3)"></span>
-                        <span class="dot" onclick="goToSlide(4)"></span>
-                        <span class="dot" onclick="goToSlide(5)"></span>
-                        <span class="dot" onclick="goToSlide(6)"></span>
-                    </div>
-                </div>
-                
-                <div class="popup-message">
-                    <p>"Setiap hari yang ku lalui bersamamu adalah hari yang tidak pernah ingin ku akhiri."</p>
-                    <button class="btn popup-btn" onclick="closePhotoPopup()">Terima Kasih Sudah Menunggu ku 💝</button>
-                </div>
-            </div>
-        </div>
-        <div class="game-section">
-            
-            <!-- Album Foto -->
-            <div class="game-card">
-                <div class="game-icon">
-                    <i class="fas fa-images"></i>
-                </div>
-                <h2 class="game-title">Album Kenangan</h2>
-                <p class="game-description">Lihat betapa cantik-nya dirimu Sayang❤️.</p>
-                <button class="btn" onclick="openGame('album')">Buka Album</button>
-            </div>
+    <p class="message">
+      We’re making things faster & smoother for you.<br> 
+      Sorry for the pause — we’ll be back shortly.
+    </p>
 
-            <!-- Teka-Teki Cinta -->
-            <div class="game-card">
-                <div class="game-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-            <h2 class="game-title">Teka-Teki Cinta</h2>
-            <p class="game-description">Jawab teka-teki romantis ini untuk menguji kecintaanmu Sayang❤️.</p>
-            <button class="btn" onclick="openGame('riddle')">Main Teka-Teki</button>
-            </div>
-
-            <!-- Pesan Rahasia -->
-            <div class="game-card">
-                <div class="game-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h2 class="game-title">Pesan Rahasia</h2>
-                <p class="game-description">Dapatkan pesan rahasia yang hanya untukmu Sayang❤️.</p>
-                <button class="btn" onclick="openGame('message')">Buka Pesan</button>
-            </div>
-        </div>
-
-        <!-- Area Album Foto -->
-        <div id="album-game" class="game-area">
-            <div class="game-header">
-                <h2>Album Kenangan Spesial</h2>
-                <button class="back-btn" onclick="closeGame('album')"><i class="fas fa-arrow-left"></i> Kembali</button>
-            </div>
-            <p style="text-align: center; margin-bottom: 20px; color: #ffffff;">Klik gambarnya untuk baca Pesan Rahasia</p>
-            
-            <div class="album-container">
-                <!-- Gambar-gambar akan ditampilkan di sini -->
-               <div class="photo-frame" onclick="showPhoto('photo1')">
-                    <img src="images/1.jpg" alt="Peace kecil, senyum manis" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Peace kecil, senyum manis</div>
-                </div>
-                
-                <div class="photo-frame" onclick="showPhoto('photo2')">
-                    <img src="images/2.jpg" alt="Naik kuda sambil senyum" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Naik kuda sambil senyum</div>
-                </div>
-                
-                <div class="photo-frame" onclick="showPhoto('photo3')">
-                    <img src="images/3.jpg" alt="Senyumnya bersinar" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Senyumnya bersinar</div>
-                </div>
-                
-                <div class="photo-frame" onclick="showPhoto('photo4')">
-                    <img src="images/4.jpg" alt="Peace manis" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Peace manis</div>
-                </div>
-                
-                <div class="photo-frame" onclick="showPhoto('photo5')">
-                    <img src="images/5.jpg" alt="Agak blur" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Agak blur</div>
-                </div>
-                
-                <div class="photo-frame" onclick="showPhoto('photo6')">
-                    <img src="images/6.jpg" alt="Pose galak dikit" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Pose galak dikit</div>
-                </div>
-
-                <div class="photo-frame" onclick="showPhoto('photo7')">
-                    <img src="images/7.jpg" alt="Jempol mantap" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Jempol mantap</div>
-                </div>
-
-                <div class="photo-frame" onclick="showPhoto('photo8')">
-                    <img src="images/8.jpg" alt="Duduk manis" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Duduk manis</div>
-                </div>
-
-                <div class="photo-frame" onclick="showPhoto('photo9')">
-                    <img src="images/9.jpg" alt="Muka nangis dikit" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Muka nangis dikit</div>
-                </div>
-
-                <div class="photo-frame" onclick="showPhoto('photo10')">
-                    <img src="images/10.jpg" alt="Pakai masker pun" style="width: 100%; height: 100%; object-fit: cover;">
-                    <div class="photo-label">Pakai masker pun</div>
-                </div>
-            </div>
-            
-            <p style="text-align: center; margin-top: 30px; font-style: italic; color: #ffffff;">
-                "Setiap gambar mewakili bagian dari perasaan yang tak bisa diungkapkan dengan kata-kata."
-            </p>
-        </div>
-
-        <!-- Tambahkan area game teka-teki SETELAH area album: -->
-        <div id="riddle-game" class="game-area" aria-label="Area Game Teka-Teki Cinta">
-            <div class="game-header">
-                <h2 id="riddleGameTitle">Teka-Teki Cinta Romantis</h2>
-                <button class="back-btn" onclick="closeGame('riddle')" aria-label="Kembali ke menu utama">
-                <i class="fas fa-arrow-left"></i> Kembali
-                </button>
-        </div>
-    
-    <div class="love-riddle-game" role="region" aria-labelledby="riddleGameTitle">
-        <h3 class="riddle-title">Coba Jawab Teka-Teki Cinta Ini!</h3>
-        <p class="riddle-instruction" id="gameInstructions">
-            Pilih jawaban yang paling tepat untuk setiap pertanyaan tentang cinta dan hubungan ya sayang. 
-        </p>
-        
-        <div class="riddles-container" id="riddlesContainer" role="list" aria-describedby="gameInstructions">
-            <!-- Teka-teki akan di-generate oleh JavaScript -->
-        </div>
-                
-                <div class="score-container">
-                    <div class="score-title">Skor Cintamu</div>
-                    <div class="score-value" id="scoreValue">0</div>
-                    <div class="hearts-earned" id="heartsEarned">💖 0 hati terkumpul</div>
-                </div>
-                
-                <div class="riddle-controls">
-                    <button class="control-btn reset" onclick="resetRiddles()">
-                        <i class="fas fa-redo"></i> Ulangi Game
-                    </button>
-                    <button class="control-btn" onclick="checkAllAnswers()">
-                        <i class="fas fa-check-circle"></i> Periksa Jawaban
-                    </button>
-                </div>
-                
-                <div class="riddle-complete" id="completionMessage">
-                    <h3>🎉 Selamat! 🎉</h3>
-                    <p>Kamu berhasil menyelesaikan semua teka-teki cinta dengan sempurna!</p>
-                    <div class="completion-hearts">💖💖💖💖💖</div>
-                    <p>"Cintamu seperti jawaban teka-teki ini - sempurna dan tak terbantahkan sayangku!"</p>
-                    <div class="hearts-container">
-                        <div class="heart-badge">💝</div>
-                        <div class="heart-badge">💘</div>
-                        <div class="heart-badge">💕</div>
-                        <div class="heart-badge">💞</div>
-                        <div class="heart-badge">💗</div>
-                    </div>
-                    <button class="control-btn" onclick="resetRiddles()">
-                        <i class="fas fa-play-circle"></i> Main Lagi
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Area Pesan Rahasia -->
-        <div id="message-game" class="game-area">
-            <div class="game-header">
-                <h2>Pesan Rahasia</h2>
-                <button class="back-btn" onclick="closeGame('message')"><i class="fas fa-arrow-left"></i> Kembali</button>
-            </div>
-            <p style="text-align: center; margin-bottom: 20px; color: #fff9f9;">Klik tombol di bawah untuk mengungkap pesan rahasia yang hanya untukmu.</p>
-            
-            <div class="message-container">
-                <div class="secret-message" id="secret-message">
-                    <!-- Pesan rahasia akan muncul di sini -->
-                </div>
-                <button class="reveal-btn" onclick="revealMessage()"><i class="fas fa-lock-open"></i> Buka Pesan Rahasia</button>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="color: #ffffff; font-style: italic;">"Kadang kata-kata tak cukup untuk mengungkapkan apa yang ada di hati, tapi setidaknya ini bisa menjadi awalnya ya sayang."</p>
-            </div>
-        </div>
-        <footer>
-            <p style="color: #ff0000; font-style: bold; font-size: large;">AKU PUNYA HADIAH SPESIAL BUAT KAMU </p>
-                    <!-- Gift Icon -->
-<p style="color: #ff0000; font-style: bold; font-size: large;">UNTUK ORANG YANG SANGAT SPECIAL</p> <div class="gift-icon click-counter" onclick="showRandomMessage()">
-        <i class="fas fa-gift"><span id="clickCount"></span></i>
-    </div> <br><p> </p>
-                <!-- Overlay (background dim) -->
-    <div class="overlay" id="overlay" onclick="closePopup()"></div>
-    
-    <!-- Message Popup -->
-    <div class="message-popup" id="messagePopup">
-        <div id="messageContent">
-            <!-- Content will be inserted here by JavaScript -->
-        </div>
-        <button class="close-btn" onclick="closePopup()">Close</button>
+    <!-- progress indicator (visual only, just for one‑page feel) -->
+    <div class="progress-container">
+      <div class="progress-label">
+        <span>✨ polishing</span>
+        <span>73%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" style="width: 73%;"></div>
+      </div>
     </div>
-            <p style="color: #ffffff; font-style: italic;">"SETIAP DETIK BERSAMA MU, ADALAH ANUGRAH TERINDAH UNTUK-KU"</p>
-            <br>
-            <p style="
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-size: 20px;
-                text-align: center;
-                opacity: 0.5;
-                padding: 25px;
-                border-radius: 12px;
-                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-                max-width: 400px;
-                margin: 20px auto;
-                line-height: 1.6;
-            ">
-                💌 <b style='color: #ffdd59'>NOVI MUTIARA</b> ❤️<br>
-                =<b style='color: #ffdd59'>SUGIANTO</b>=
-            </p>
-        </footer>
+
+    <!-- estimated time remaining (soft) -->
+    <div class="eta">
+      ⏱️ estimated remaining <span>15 min</span>
     </div>
-    
-    <script src="js/textt.js"></script>
-    <script src="js/gift.js"></script>
-    <script src="js/countdown.js"></script>
-    <script src="js/javascript.js"></script>
-    <script src="js/riddle.js"></script>
+
+    <!-- Simple "notify me" form – keeps users engaged without leaving page -->
+    <div class="notify-group">
+      <input type="email" class="notify-input" placeholder="your@email.com" aria-label="Email for notification">
+      <button class="notify-button" onclick="simulateNotify(this)">🔔 notify me</button>
+    </div>
+
+    <!-- subtle social / contact / status links (all in one line) -->
+    <div class="footer-note">
+      <span>📋 <a href="#">status</a></span>
+      <span>🐦 <a href="#">x.com/updates</a></span>
+      <span>📧 <a href="#">support</a></span>
+      <span class="credit-note"> • maintenance mode</span>
+    </div>
+  </div>
+
+  <!-- tiny script to simulate a friendly alert (non‑intrusive, just for demo) -->
+  <script>
+    function simulateNotify(btn) {
+      const input = document.querySelector('.notify-input');
+      const email = input.value.trim();
+      if (email === '') {
+        alert('📨 Please enter an email address to get notified.');
+      } else if (!email.includes('@') || !email.includes('.')) {
+        alert('🔍 Hmm, that doesn’t look like a full email. Mind double‑checking?');
+      } else {
+        alert(`👍 Thanks! We’ll ping you at ${email} as soon as we’re live.`);
+        input.value = ''; // optional reset
+      }
+    }
+
+    // optional gentle console reminder (doesn't interfere)
+    console.log('🛠️ site maintenance page — one page, clear message.');
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
